@@ -1,4 +1,4 @@
--- Active: 1749763347088@@127.0.0.1@3307@Empresa
+-- Active: 1749813797455@@127.0.0.1@3307@Empresa
 
 --  Obtener Cliente 
 DELIMITER $$
@@ -129,3 +129,82 @@ DELIMITER ;
 
 CALL moneyLibro(30.00);
 
+-- Actualizar Libro
+
+DELIMITER $$
+CREATE PROCEDURE editLibro(IN l_id INT,l_titulo VARCHAR(100), l_precio DECIMAL(10,2))
+BEGIN
+    DECLARE existe INT;
+    SELECT COUNT(*) INTO existe
+    FROM libros
+    WHERE `id` = l_id;
+    IF existe > 0 THEN
+        UPDATE libros
+        SET titulo = l_titulo , precio = l_precio
+        WHERE `id` = l_id;
+        SELECT CONCAT('Libro Actualizado')
+        AS 'Resultado';
+    ELSE
+        SELECT 'Libro no existe en la base de datos' AS mensaje;
+    END IF;
+END $$
+
+DELIMITER ;
+
+CALL `editLibro`(2,'asasdasasd', 60.00)
+
+-- Actualizar Cliente 
+
+DELIMITER $$
+
+CREATE PROCEDURE editCliente(IN c_id INT, c_nombre VARCHAR(100), c_barrio VARCHAR(150))
+BEGIN
+    DECLARE existe INT;
+    SELECT COUNT(*) INTO existe
+    FROM cliente
+    WHERE `id` = c_id;
+
+    IF existe > 0 THEN
+        UPDATE cliente
+        SET nombre = c_nombre , barrio = c_barrio
+        WHERE `id` = c_id;
+        SELECT CONCAT('Cliente Actualizado')
+        AS 'Resultado';
+
+    ELSE
+        SELECT 'Cliente no existe en la base de datos' AS mensaje;
+    END IF;
+
+END $$
+
+DELIMITER ; 
+
+CALL `editCliente`(1,'L.L','Britania')
+
+-- Actualizar Ordenes
+
+DELIMITER $$
+
+CREATE PROCEDURE editOrdenes(IN o_id INT, o_fecha DATE)
+BEGIN
+    DECLARE existe INT;
+    SELECT COUNT(*) INTO existe
+    FROM ordenes
+    WHERE id = o_id;
+
+    IF existe > 0 THEN
+        UPDATE ordenes
+        SET fecha = o_fecha
+        WHERE id = o_id;
+        SELECT CONCAT('Orden Actualizada')
+        AS 'Resultado';
+
+    ELSE
+        SELECT 'Orden no existe en la base de datos' AS mensaje;
+    END IF;
+
+END $$
+
+DELIMITER ;
+
+CALL `editOrdenes`(1,'2000-01-01')

@@ -1,4 +1,4 @@
--- Active: 1749763347088@@127.0.0.1@3307
+-- Active: 1749813797455@@127.0.0.1@3307@Empresa
 DROP DATABASE Empresa;
 CREATE DATABASE Empresa;
 USE Empresa;

@@ -1,4 +1,4 @@
--- Active: 1749763347088@@127.0.0.1@3307@Empresa
+-- Active: 1749813797455@@127.0.0.1@3307@Empresa
 INSERT INTO `cliente` (nombre,telefono, barrio, ciudad) VALUES
 ('Nicolas Muskus Tarazona', '+57 325325', 'Carrizal',    'Giron'        ),
 ('Danilo Muskus Tarazona',  '+57 341237', 'Carrizal',    'Giron'        ),
