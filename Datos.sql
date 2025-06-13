@@ -15,13 +15,13 @@ INSERT INTO `libros` (titulo,autor,precio) VALUES
 ('Carros de carruzeles', 'cucak', 30.00),
 ('EL pepe', 'Ete secht', 1.00)
 
-INSERT INTO `ordenes` (cliente_id, libro_id, fecha) VALUES
-(1, 2, '2025-01-15'),
-(2, 1, '2025-04-25'),
-(3, 3, '2025-03-25'),
-(1, 1, '2025-02-10'),
-(2, 3, '2025-01-07'),
-(1, 2, '2025-05-30');
+INSERT INTO `ordenes` (cliente_id, libro_id, fecha, ordenes_separador_id) VALUES
+(1, 2, '2025-01-15', 1),
+(2, 1, '2025-04-25', 2),
+(3, 3, '2025-03-25', 3),
+(1, 1, '2025-02-10', 4),
+(2, 3, '2025-01-07', 5),
+(1, 2, '2025-05-30', 6);
 
 INSERT INTO `factura`(orden_id,fecha,total,estado) VALUES
 (1,'2025-01-15',12.00,'pendite'),
