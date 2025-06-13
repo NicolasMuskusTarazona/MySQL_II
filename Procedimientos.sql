@@ -230,3 +230,4 @@ DELIMITER;
 
 SELECT fn_calcular_libros() AS Total_Precios;
 
+-- 
