@@ -228,4 +228,5 @@ END $$
 
 DELIMITER;
 
-SELECT fn_calcular_libros() AS Total_Precios    ;
+SELECT fn_calcular_libros() AS Total_Precios;
+

@@ -4,3 +4,5 @@ SELECT * FROM cliente;
 SELECT * FROM libros;
 
 SELECT * FROM ordenes;
+
+SELECT * FROM factura;

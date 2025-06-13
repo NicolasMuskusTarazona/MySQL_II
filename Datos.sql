@@ -22,3 +22,8 @@ INSERT INTO `ordenes` (cliente_id, libro_id, fecha) VALUES
 (1, 1, '2025-02-10'),
 (2, 3, '2025-01-07'),
 (1, 2, '2025-05-30');
+
+INSERT INTO `factura`(orden_id,fecha,total,estado) VALUES
+(1,'2025-01-15',12.00,'pendite'),
+(2,'2025-05-30',21.00,'realizado'),
+(3,'2025-02-06',3.00,'cancelado')
