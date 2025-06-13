@@ -208,3 +208,24 @@ END $$
 DELIMITER ;
 
 CALL `editOrdenes`(1,'2000-01-01')
+
+-- Sumar todos los precios de los libros
+DELIMITER $$
+
+DROP FUNCTION IF EXISTS fn_calcular_libros $$
+
+CREATE FUNCTION fn_calcular_libros()
+RETURNS DECIMAL(10,2)
+DETERMINISTIC
+BEGIN
+    DECLARE total DECIMAL(10,2);
+
+    SELECT SUM(precio) INTO total
+    FROM libros;
+
+    RETURN total;
+END $$
+
+DELIMITER;
+
+SELECT fn_calcular_libros() AS Total_Precios    ;
